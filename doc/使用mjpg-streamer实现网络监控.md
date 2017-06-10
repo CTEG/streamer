@@ -9,9 +9,7 @@ $ sudo raspi-config
 #安装依赖库
 
 ```
-$ sudo apt-get install libv4l-dev
-$ sudo apt-get install libjpeg62-turbo-dev
-$ sudo apt-get install libjpeg8-dev
+$ sudo apt-get install libv4l-dev libjpeg62-turbo-dev libjpeg8-dev
 ```
 
 
@@ -35,18 +33,26 @@ $ sudo make clean all
 $ sudo make install
 ```
 
+
 #开启`mjpg-streamer`
 
 ```
 $ LD_LIBRARY_PATH=/usr/local/lib mjpg_streamer -i "input_uvc.so" -o "output_http.so -w /usr/local/share/mjpg-streamer/www"
 ```
-
 或者
-
 ```
-$ LD_LIBRARY_PATH=/usr/local/lib mjpg_streamer -i "./input_uvc.so -d /dev/video0 -r 320*240 -f 12" -o "./output_http.so –p 8090 –w  /usr/local/share/mjpg-streamer/www"
+$ LD_LIBRARY_PATH=/usr/local/lib mjpg_streamer -i "./input_uvc.so -d /dev/video0 -yuv -r 320*240 -f 12" -o "./output_http.so –p 8090 –w  /usr/local/share/mjpg-streamer/www"
 ```
 
-`-r`后是分辨率参数；`-f`后面是帧率；`-p`后面是端口号；`-w`后面是`web`服务目录。也可以将`export LD_LIBRARY_PATH=/opt/mjpg-streamer/`添加到`path`路径。在浏览器输入`http://127.0.0.1:8080`，就可以打开监控界面了。
+`-r`后是分辨率参数；`-f`后面是帧率；`-p`后面是端口号；`-w`后面是`web`服务目录。也可以将`export LD_LIBRARY_PATH=/opt/mjpg-streamer/`添加到`path`路径。如果是自带的摄像头，那么`-i`使用`input_raspicam.so`参数。
 
-如果是自带的摄像头，那么`-i`使用`input_raspicam.so`参数。
+
+#播放视频
+
+在浏览器输入`http://127.0.0.1:8080`，就可以打开监控界面了。打开`vlc`，输入`http://127.0.0.1:8080/?action=stream`就可以播放了。
+
+
+#参考链接
+
+[Mjpg-streamer](http://see.sl088.com/wiki/Mjpg-streamer)
+[树莓派安装mjpg-streamer视频监控](http://www.tuicool.com/articles/UzMbIb)
