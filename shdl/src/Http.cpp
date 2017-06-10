@@ -72,7 +72,7 @@ size_t CHttp::Request(std::string url)
 
 	curl_easy_cleanup(c);
 
-	return 0;
+	return res;
 }
 
 } // end namespace

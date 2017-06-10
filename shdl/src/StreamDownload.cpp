@@ -8,6 +8,21 @@
 
 namespace Shdl {
 
+IStreamDownload *IStreamDownload::Create()
+{
+	return new CStreamDownload();
+}
+
+static void Parser(void *context, void *contents, size_t size)
+{
+	CStreamDownload *thiz = (CStreamDownload *)context;
+
+	if(thiz != NULL) {
+		thiz->DataCbk(contents, size);
+	}
+
+    return;
+}
 
 CStreamDownload::CStreamDownload()
 {
@@ -17,23 +32,37 @@ CStreamDownload::~CStreamDownload()
 {
 }
 
-static void Parser(void *context, void *contents, size_t size)
+void CStreamDownload::Destroy()
 {
-	printf("%lu\n", size);
-
-    return;
+	delete this;
 }
 
-void CStreamDownload::FetchStream(std::string url)
+void CStreamDownload::SetCallback(void *context, IDataCallback *pcbk)
 {
+	m_context = context;
+	m_pcbk = pcbk;
+
+	return;
+}
+
+void CStreamDownload::DataCbk(void *contents, size_t size)
+{
+	m_pcbk->HttpDlData(m_context, contents, size);
+
+	return;
+}
+
+int CStreamDownload::FetchStream(std::string url)
+{
+	int res = -1;
 	CHttp *http = new CHttp(Parser, this);
 
-	http->Request(url);
+	res = http->Request(url);
 	
 	delete http;
 	http = NULL;
 
-	return;
+	return res;
 }
 
 } // end namespace
