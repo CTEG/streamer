@@ -6,11 +6,9 @@
 
 #include "Http.h"
 
-using namespace std;
 
 
-
-namespace HttpDl {
+namespace Shdl {
 
 
 #define USER_AGENT "Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) " \
@@ -53,7 +51,7 @@ void CHttp::DataCallback(void *contents, size_t size)
 	return;
 }
 
-size_t CHttp::Request(string url)
+size_t CHttp::Request(std::string url)
 {
 	CURL *c;
 	CURLcode res = CURLE_OK;

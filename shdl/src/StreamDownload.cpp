@@ -6,7 +6,7 @@
 
 
 
-namespace HttpDl {
+namespace Shdl {
 
 
 CStreamDownload::CStreamDownload()

@@ -5,7 +5,7 @@
 #include <string>
 
 
-namespace HttpDl {
+namespace Shdl {
 
 typedef void (*HTTPDATACALLBACK)(void *context, void *contents, size_t size);
 

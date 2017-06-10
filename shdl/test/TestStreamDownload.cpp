@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv)
 {
-	HttpDl::CStreamDownload dl;
+	Shdl::CStreamDownload dl;
 	std::string url = "http://127.0.0.1:8080/?action=stream";
 
 	dl.FetchStream(url);

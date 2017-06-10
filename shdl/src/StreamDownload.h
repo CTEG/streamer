@@ -5,7 +5,7 @@
 
 
 
-namespace HttpDl {
+namespace Shdl {
 
 class CStreamDownload
 {

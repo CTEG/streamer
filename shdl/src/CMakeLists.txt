@@ -1,8 +1,8 @@
 include_directories(
-	${TOPDIR}/http/include
+	${TOPDIR}/shdl/include
 )
 
 file(GLOB_RECURSE HEADERFILES "../include/*")
 aux_source_directory(. DIR_SRCS)
-add_library(httpdl ${DIR_SRCS} ${HEADERFILES})
+add_library(shdl ${DIR_SRCS} ${HEADERFILES})
 

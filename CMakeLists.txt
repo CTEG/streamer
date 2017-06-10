@@ -15,6 +15,6 @@ set(BUILDDIR ${TOPDIR}/cmake_build/build)
 #add_definitions(-DBUILD_SSL)
 #add_compile_options(-DBUILD_SSL)
 
-add_subdirectory(${TOPDIR}/http/src ${BUILDDIR}/http/src)
-add_subdirectory(${TOPDIR}/http/test ${BUILDDIR}/http/test)
+add_subdirectory(${TOPDIR}/shdl/src ${BUILDDIR}/shdl/src)
+add_subdirectory(${TOPDIR}/shdl/test ${BUILDDIR}/shdl/test)
 
