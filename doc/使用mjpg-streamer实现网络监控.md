@@ -55,4 +55,5 @@ $ LD_LIBRARY_PATH=/usr/local/lib mjpg_streamer -i "./input_uvc.so -d /dev/video0
 #参考链接
 
 [Mjpg-streamer](http://see.sl088.com/wiki/Mjpg-streamer)
+
 [树莓派安装mjpg-streamer视频监控](http://www.tuicool.com/articles/UzMbIb)
