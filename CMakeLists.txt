@@ -18,3 +18,7 @@ set(BUILDDIR ${TOPDIR}/cmake_build/build)
 add_subdirectory(${TOPDIR}/shdl/src ${BUILDDIR}/shdl/src)
 add_subdirectory(${TOPDIR}/shdl/test ${BUILDDIR}/shdl/test)
 
+add_subdirectory(${TOPDIR}/yuvconverter/src ${BUILDDIR}/yuvconverter/src)
+add_subdirectory(${TOPDIR}/yuvconverter/test ${BUILDDIR}/yuvconverter/test)
+
+add_subdirectory(${TOPDIR}/jpg2yuv/test ${BUILDDIR}/jpg2yuv/test)
