@@ -21,4 +21,7 @@ add_subdirectory(${TOPDIR}/shdl/test ${BUILDDIR}/shdl/test)
 add_subdirectory(${TOPDIR}/yuvconverter/src ${BUILDDIR}/yuvconverter/src)
 add_subdirectory(${TOPDIR}/yuvconverter/test ${BUILDDIR}/yuvconverter/test)
 
+add_subdirectory(${TOPDIR}/yuv2h264/src ${BUILDDIR}/yuv2h264/src)
+add_subdirectory(${TOPDIR}/yuv2h264/test ${BUILDDIR}/yuv2h264/test)
+
 add_subdirectory(${TOPDIR}/jpg2yuv/test ${BUILDDIR}/jpg2yuv/test)
