@@ -26,16 +26,16 @@ void CX264Encoder::Start(int width, int height)
 	m_picture = (x264_picture_t *)malloc(sizeof(x264_picture_t));
 
 	x264_param_default(m_param);	//set default param
-	//en->param->rc.i_rc_method = X264_RC_CQP;//设置为恒定码率
-	//en->param->i_log_level = X264_LOG_NONE;
-	//en->param->i_threads  = X264_SYNC_LOOKAHEAD_AUTO;//取空缓存区使用不死锁保证
-	//en->param->i_frame_total = 0;
-	m_param->i_keyint_max = 10; 
-	//en->param->i_bframe = 5; //两个参考帧之间b帧的数目
-	//en->param->b_open_gop = 0;
-	//en->param->i_bframe_pyramid = 0;
-	//en->param->i_bframe_adaptive = X264_B_ADAPT_TRELLIS;
-	//en->param->rc.i_bitrate = 1024 * 10;//rate 为10 kbps
+	//param->rc.i_rc_method = X264_RC_CQP;//设置为恒定码率
+	//param->i_log_level = X264_LOG_NONE;
+	//param->i_threads  = X264_SYNC_LOOKAHEAD_AUTO;//取空缓存区使用不死锁保证
+	//param->i_frame_total = 0;
+	//param->i_bframe = 5; //两个参考帧之间b帧的数目
+	//param->b_open_gop = 0;
+	//param->i_bframe_pyramid = 0;
+	//param->i_bframe_adaptive = X264_B_ADAPT_TRELLIS;
+	//param->rc.i_bitrate = 1024 * 10;//rate 为10 kbps
+	m_param->i_keyint_max = 10;
 	m_param->i_width = width;	//set frame width
 	m_param->i_height = height;	//set frame height
 	m_param->rc.i_lookahead = 0;	//表示i帧向前缓冲区
