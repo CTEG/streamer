@@ -222,7 +222,7 @@ int main(int argc, char *argv[])
 #endif
     
     int ret = custom_gethostbyname("www.g.cn", "8.8.8.8");
-  
+
 #ifdef _WINDOWS_
     WSACleanup(); // 关闭加载的套接字库
 #endif
